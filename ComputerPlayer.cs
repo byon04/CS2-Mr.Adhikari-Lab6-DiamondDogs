@@ -1,28 +1,19 @@
 ﻿using System;
 
-public class ComputerPLayer
+public class ComputerPlayer
 {
-	public ComputerPlayer()
-	{
-		// array for the values used by the computer
-		static string[] RandomRPS = { "rock", "paper", "scissors" };
+	// array for the values used by the computer
+	string[] RandomRPS = { "rock", "paper", "scissors" };
 
-		// an instance for the generator
-		static RandomGenerator random = new RandomGenerator();
+	// an instance for the generator
+	Random random = new Random();
 
 	//Method to get the choice
-	public static string ComputerChoice()
+	public string GenerateChoice()
 	{
 		//random generator
 		int pickRandom = random.Next(RandomRPS.Length);
 		// generator return
 		return RandomRPS[pickRandom];
-	}
-
-	//test
-	static void Main(string[] args)
-	{
-		string computerMove = ComputerChoice();
-	}
 	}
 }
